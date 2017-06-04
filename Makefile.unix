@@ -1,0 +1,25 @@
+#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# $Id$
+# <mmr@b1n.org> 2004/02
+#
+
+# Prog
+PROG=	life
+SRCS=	life.c
+OBJS=	life.o
+
+# Apps
+CC=		cc
+
+
+# Flags
+CFLAGS=	-I/usr/X11R6/include -I/usr/local/include
+LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lm -lGL -lGLU -lglut -lX11 -lXmu -lXi
+
+all: $(PROG)
+
+$(SRCS):
+	$(GET) $@
+
+clean:
+	-rm -f *.o *.core $(PROG)

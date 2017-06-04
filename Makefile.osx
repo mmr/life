@@ -1,0 +1,25 @@
+#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# $Id: Makefile,v 1.2 2006/01/12 22:32:39 mmr Exp $
+# <mmr@b1n.org> 2004/02
+#
+
+# Prog
+PROG=	life
+SRCS=	life.c
+OBJS=	life.o
+
+# Apps
+CC=		gcc
+
+
+# Flags
+CFLAGS=
+LDFLAGS=-framework OpenGL -framework GLUT
+
+all: $(PROG)
+
+$(SRCS):
+	$(GET) $@
+
+clean:
+	-rm -f *.o *.core $(PROG)
